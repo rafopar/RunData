@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*-
+
 from __future__ import print_function
 import sys
 import os
@@ -803,6 +803,8 @@ if __name__ == "__main__":
     min_event_count = 1000000              # Runs with at least 1M events.
     start_time = datetime(2019,7,25,0,0)  # SVT back in correct position
     end_time   = datetime.now()
+    #Commenting, since the Run is over now
+    end_time   = datetime(2019,9,9,9,0)
     end_time = end_time+timedelta(0,0,-end_time.microsecond)      # Round down on end_time to a second
 
     data.get_runs(start_time,end_time,min_event_count)
