@@ -583,7 +583,8 @@ class RunData:
         if not override and ("charge" in self.All_Runs.keys()) and not np.isnan(self.All_Runs.loc[runnumber,"charge"]):
             return
 
-        current =  self.Mya.get('IPM2C21A',
+        #current =  self.Mya.get('IPM2C21A',
+        current =  self.Mya.get('scaler_calc1b',
             self.All_Runs.loc[runnumber,"start_time"],
             self.All_Runs.loc[runnumber,"end_time"]   )
         live_time = self.Mya.get('B_DAQ_HPS:TS:livetime',
@@ -796,7 +797,7 @@ if __name__ == "__main__":
     data.Good_triggers=['hps_v7.cnf','hps_v8.cnf','hps_v9.cnf','hps_v9_1.cnf',
                         'hps_v9_2.cnf','hps_v10.cnf',
                         'hps_v11_1.cnf','hps_v11_2.cnf','hps_v11_3.cnf','hps_v11_4.cnf',
-                        'hps_v11_5.cnf','hps_v11_6.cnf']
+                        'hps_v11_5.cnf','hps_v11_6.cnf', 'hps_v12_1.cnf']
     data.Production_run_type=["PROD66","PROD67"]
     data.target_dict = HPS_2019_Run_Target_Thickness()
 
